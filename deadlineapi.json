@@ -1,60 +1,35 @@
 { 
     "api": "0.1",
     "api_compatibility": ["0.1"],
-    "endpointname": "Testendpoint",
+    "endpointname": "deadlineapi.acmccs.com",
+    "endpointurl": "https://endpoint.deadlineapi.org",
+    "endpointlogo": "https://endpoint.deadlineapi.org/endpointlogo.png",
     "deadlines": [
-        {
-          "name": "ACM CCS 2021 A",
-          "logo": "<url_to_logo>",
-          "confurl": "<url_to_conference>",
-          "cfpurl": "<url_to_cfp>",
-          "categories": [
-             "privacy",
-             "security",
-             "forensics"
-           ],
-          "location": {
-            "virtual": false,
-            "country": "Germany",
-            "city": "Karlsruhe",
-            "lon": 9.236,
-            "lat": 48.777
-          },
-          "contact": {
-            "email": "info@acmccs.de",
-            "twitter": "@acmccs2021"
-          },
-          "startdate": "09-14-2021",
-          "enddate": "09-17-2021",
-          "deadline": "08-06-2021 23:59 AoE",
-          "pagelimit": 12
-        },
-
-        {
-          "name": "ACM CCS 2021 B",
-          "logo": "<url_to_logo>",
-          "confurl": "<url_to_conference>",
-          "cfpurl": "<url_to_cfp>",
-          "categories": [
-             "privacy",
-             "security",
-             "forensics"
-           ],
-          "location": {
-            "virtual": false,
-            "country": "Germany",
-            "city": "Karlsruhe",
-            "lon": 9.236,
-            "lat": 48.777
-          },
-          "contact": {
-            "email": "info@acmccs.de",
-            "twitter": "@acmccs2021"
-          },
-          "startdate": "09-14-2021",
-          "enddate": "09-17-2021",
-          "deadline": "08-06-2021 23:59 AoE",
-          "pagelimit": 12
-        }
+    {
+      "name": "ACM CCS 2021 A",
+      "logo": "<url_to_logo>",
+      "confurl": "<url_to_conference>",
+      "cfpurl": "<url_to_cfp>",
+      "categories": [
+          "privacy",
+          "security",
+          "forensics"
+        ],
+      "location": {
+        "virtual": false,
+        "country": "Germany",
+        "city": "Karlsruhe",
+        "lon": 9.236,
+        "lat": 48.777
+      },
+      "contact": {
+        "email": "info@acmccs.de",
+        "twitter": "@acmccs2021"
+      },
+      "startdate": "2021-08-06",
+      "enddate": "2021-08-08",
+      "deadline": "2021-01-19 23:59:59 -1200",
+      "pagelimit": 12
+    }
 	]
 }
