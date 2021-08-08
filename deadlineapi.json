@@ -1,9 +1,9 @@
 { 
     "api": "0.1",
     "api_compatibility": ["0.1"],
-    "endpointname": "deadlineapi.acmccs.com",
-    "endpointurl": "https://endpoint.deadlineapi.org",
-    "endpointlogo": "https://endpoint.deadlineapi.org/endpointlogo.png",
+    "name": "deadlineapi.acmccs.com",
+    "url": "https://endpoint.deadlineapi.org",
+    "logo": "https://endpoint.deadlineapi.org/endpointlogo.png",
     "deadlines": [
     {
       "name": "ACM CCS 2021 A",
