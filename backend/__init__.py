@@ -20,8 +20,8 @@ defaultentry = dict(
     pagelimit=None
 )
 
-def get_db():
-    conn = sqlite3.connect("endpoint.db")
+def get_db(path='endpoint.db'):
+    conn = sqlite3.connect(path)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
 
@@ -34,9 +34,9 @@ def get_db():
     _initialize_database(conn)
     return conn
 
-def reset_database():
-    os.remove("endpoint.db")
-    conn = sqlite3.connect("endpoint.db")
+def reset_database(path='endpoint.db'):
+    os.remove(path)
+    conn = sqlite3.connect(path)
     _initialize_database(conn)
     conn.close()
 
