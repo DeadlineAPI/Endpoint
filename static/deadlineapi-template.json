@@ -1,0 +1,9 @@
+{ 
+    "api": "0.1",
+    "api_compatibility": ["0.1"],
+    "name": "endpoint.deadlineapi.org",
+    "url": "https://endpoint.deadlineapi.org",
+    "logo": "https://endpoint.deadlineapi.org/logo.png",
+    "deadlines": [
+	]
+}

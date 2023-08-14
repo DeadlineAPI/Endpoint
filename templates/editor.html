@@ -70,25 +70,26 @@
 <div class="card" style="width: 100%;">
   <div class="card-body">
     <h5 class="card-title">{{ entry.name }}</h5>
-    <p class="card-text">shortname: {{ entry.shortname }}</p>
-    <p class="card-text">cycle: {{ entry.cycle }}</p>
-    <p class="card-text">confurl: {{ entry.confurl }}</p>
-    <p class="card-text">cfpurl: {{ entry.cfpurl }}</p>
-    <p class="card-text">categories: {{ entry.categories }}</p>
-    <p class="card-text">location: {{ entry.location_virtual }}, {{ entry.location_country }}, {{ entry.location_city }}, ({{ entry.location_lat }},{{ entry.location_lon }})</p>
-    <p class="card-text">startdate: {{ entry.startdate }}</p>
-    <p class="card-text">enddate: {{ entry.enddate }}</p>
-    <p class="card-text">deadline: {{ entry.deadline }}</p>
-    <p class="card-text">pagelimit: {{ entry.pagelimit }}</p>
-
-    <p class="card-text"><a class="btn btn-primary" href="editor/delete/{{entry.id}}" role="button">delete</a></p>
-    <p class="card-text"><a class="btn btn-primary" href="editor/edit/{{entry.id}}" role="button">edit</a></p>
+      <dic class="row">
+          <div class = col><p class="card-text">{{ entry.shortname }}</p></div>
+          <div class = col><p class="card-text">{{ entry.cycle }}</p></div>
+      </dic>
+      <p class="card-text"><span class="lable">confurl:</span> {{ entry.confurl }}</p>
+    <p class="card-text"><span class="lable">cfpurl:</span> {{ entry.cfpurl }}</p>
+    <p class="card-text"><span class="lable">categories:</span> {% for category in entry.categories.split(',') %}<span class="badge badge-primary">{{ category }}</span> {% endfor %}</p>
+    <p class="card-text"><span class="lable">location:</span> {{ entry.location_virtual }}, {{ entry.location_country }}, {{ entry.location_city }}, ({{ entry.location_lat }},{{ entry.location_lon }})</p>
+    <p class="card-text"><span class="lable">conference date:</span> {{ entry.startdate | datefilter }} - {{ entry.enddate | datefilter }}</p>
+    <p class="card-text"><span class="lable">deadline:</span> {{ entry.deadline | datetimefilter }}</p>
+    <p class="card-text"><span class="lable">pagelimit:</span> {{ entry.pagelimit }}</p>
+    <p class="card-text">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" class="btn btn-primary" href="editor/delete/{{entry.id}}" role="button">delete</a>
+        <a type="button" class="btn btn-primary" href="editor/duplicate/{{entry.id}}" role="button">duplicate</a>
+        <a type="button" class="btn btn-primary" href="editor/edit/{{entry.id}}" role="button">edit</a>
+      </div>
+    </p>
   </div>
 </div>
 {% endfor %}
-
-
-
-
 </body>
 </html>
