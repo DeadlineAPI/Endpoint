@@ -1,0 +1,94 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 50px;
+      background-color: #F5F5F5;
+
+    }
+    h1 {
+      margin: 30px;
+    }
+    h2 {
+      font-size: 1.3em
+    }
+    .card {
+      margin: 4px;
+    }
+
+    .style-invalid{
+      color: red;
+      border-color: red;
+    }
+
+    .style-not_available{
+      color: red;
+      border-color: red;
+    }
+
+    .style-unknown_version{
+      color: red;
+      border-color: red;
+    }
+
+    .json-note{
+      font-size: 0.6em;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 2px;
+      padding: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src='/logo.png' width='13%'>
+<h1>DeadlineAPI - Endpoint-Editor</h1>
+
+
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title">Description</h5>
+    <p class="card-text">
+        This is a simple editor for <code>endpoint.deadlineapi.org</code> endpoint. For more information on the DeadlineAPI project see <a href='https://deadlineapi.org'>https://deadlineapi.org</a>.
+    </p>
+  </div>
+</div>
+
+<h2>Entries</h2>
+<p>Edit the entries below or <a href='/editor/new'>add a new entry.</a></p>
+{% for entry in entries %}
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <h5 class="card-title">{{ entry.name }}</h5>
+    <p class="card-text">shortname: {{ entry.shortname }}</p>
+    <p class="card-text">cycle: {{ entry.cycle }}</p>
+    <p class="card-text">confurl: {{ entry.confurl }}</p>
+    <p class="card-text">cfpurl: {{ entry.cfpurl }}</p>
+    <p class="card-text">categories: {{ entry.categories }}</p>
+    <p class="card-text">location: {{ entry.location_virtual }}, {{ entry.location_country }}, {{ entry.location_city }}, ({{ entry.location_lat }},{{ entry.location_lon }})</p>
+    <p class="card-text">startdate: {{ entry.startdate }}</p>
+    <p class="card-text">enddate: {{ entry.enddate }}</p>
+    <p class="card-text">deadline: {{ entry.deadline }}</p>
+    <p class="card-text">pagelimit: {{ entry.pagelimit }}</p>
+
+    <p class="card-text"><a class="btn btn-primary" href="editor/delete/{{entry.id}}" role="button">delete</a></p>
+    <p class="card-text"><a class="btn btn-primary" href="editor/edit/{{entry.id}}" role="button">edit</a></p>
+  </div>
+</div>
+{% endfor %}
+
+
+
+
+</body>
+</html>
