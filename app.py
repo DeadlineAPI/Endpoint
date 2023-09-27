@@ -8,7 +8,6 @@ import backend
 
 app = flask.Flask(__name__, static_url_path='/static')
 
-
 class EntryNotFoundException(Exception):
     pass
 
